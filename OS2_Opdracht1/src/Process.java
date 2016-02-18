@@ -1,6 +1,5 @@
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 //@XmlType( propOrder = { "pid", "arrivaltime", "servicetime","endtime","runtime","norRuntime","waittime" })
 @XmlRootElement( name = "process")

@@ -27,6 +27,10 @@ public class Processlist {
 		Collections.sort(processenLijst,(Process p1, Process p2) -> p1.getArrivaltime()-p2.getArrivaltime());
 	}
 	
+	public void sortServiceTime() {
+		Collections.sort(processenLijst,(Process p1, Process p2) -> p1.getServicetime()-p2.getServicetime());		
+	}
+	
 	//Uitvoering van het FCFS algo
 	public void voerFCFSUit() {
 		//We beginnen bij het eerste proces
@@ -41,4 +45,10 @@ public class Processlist {
 			tijd+=hulp.getServicetime();
 		}
 	}
+
+	public List<Process> verdeelLijst(int i, int aantalElementenPerPercentiel) {
+		List<Process> deelLijst = processenLijst.subList(i*aantalElementenPerPercentiel, (i+1)*aantalElementenPerPercentiel-1);
+		return deelLijst;
+	}
+	
 }

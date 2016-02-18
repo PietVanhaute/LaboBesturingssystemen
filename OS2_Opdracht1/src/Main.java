@@ -1,6 +1,4 @@
 import java.io.File;
-import java.util.Collections;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -17,12 +15,27 @@ public class Main {
 			Processlist procList = (Processlist) jaxbUnmarshaller.unmarshal(file);
 			System.out.println(procList);
 			procList.sortArrivalTime();
-			procList.voerFCFSUit();
-			System.out.println("FCFS is uitgevoerd");
-			System.out.println(procList.getProcessenLijst().get(2).getWaittime());
-
+			verwerkGegevens(procList);
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static void verwerkGegevens(Processlist procList) {
+		//Lijst waarin alle algoritmes kunnen komen
+		GlobalVarList hulp = new GlobalVarList();
+		for(int i=0;i<9;i++){
+			switch(i){
+			case 0: 
+				procList.voerFCFSUit();
+				System.out.println("FCFS is uitgevoerd");
+				procList.sortServiceTime();
+				hulp.verwerkGegevens(procList);
+				System.out.println("Gegevens zijn verwerkt");
+				break;
+			//case 1 : procList.voerRR2Uit(); ...
+			}
+		}
+		
 	}
 }
