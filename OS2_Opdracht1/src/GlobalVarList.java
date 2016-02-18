@@ -2,13 +2,13 @@ import java.util.*;
 
 public class GlobalVarList {
 	private List<GlobalVar> allePercentielen;
-	private int averageRuntime, averageNorRuntime, averageWaittime;
+	private int averageTotRuntime, averageTotNorRuntime, averageTotWaittime;
 	
 	public GlobalVarList(){
 		allePercentielen = new ArrayList<GlobalVar>();
-		averageRuntime=0;
-		averageNorRuntime=0; 
-		averageWaittime=0;
+		averageTotRuntime=0;
+		averageTotNorRuntime=0; 
+		averageTotWaittime=0;
 	}
 	
 	public List<GlobalVar> getAllePercentielen() {
@@ -19,28 +19,28 @@ public class GlobalVarList {
 		this.allePercentielen = allePercentielen;
 	}
 
-	public int getAverageRuntime() {
-		return averageRuntime;
+	public int getAverageTotRuntime() {
+		return averageTotRuntime;
 	}
 
-	public void setAverageRuntime(int averageRuntime) {
-		this.averageRuntime = averageRuntime;
+	public void setAverageTotRuntime(int averageRuntime) {
+		this.averageTotRuntime = averageRuntime;
 	}
 
-	public int getAverageNorRuntime() {
-		return averageNorRuntime;
+	public int getAverageTotNorRuntime() {
+		return averageTotNorRuntime;
 	}
 
-	public void setAverageNorRuntime(int averageNorRuntime) {
-		this.averageNorRuntime = averageNorRuntime;
+	public void setAverageTotNorRuntime(int averageNorRuntime) {
+		this.averageTotNorRuntime = averageNorRuntime;
 	}
 
-	public int getAverageWaittime() {
-		return averageWaittime;
+	public int getAverageTotWaittime() {
+		return averageTotWaittime;
 	}
 
-	public void setAverageWaittime(int averageWaittime) {
-		this.averageWaittime = averageWaittime;
+	public void setAverageTotWaittime(int averageWaittime) {
+		this.averageTotWaittime = averageWaittime;
 	}
 
 	public void verwerkGegevens(Processlist procList) {
@@ -54,6 +54,14 @@ public class GlobalVarList {
 			hulp  = new GlobalVar(procList.verdeelLijst(i,aantalElementenPerPercentiel),i);
 			allePercentielen.add(hulp);
 		}
-		
+		for(int i = 0;i<100;i++){
+			GlobalVar hulpGlobal = allePercentielen.get(i);
+			averageTotNorRuntime+=hulpGlobal.getAverageNorRuntime();
+			averageTotRuntime+=hulpGlobal.getAverageRuntime();
+			averageTotWaittime+=hulpGlobal.getAverageWaittime();
+		}
+		averageTotNorRuntime=averageTotNorRuntime/100;
+		averageTotRuntime=averageTotRuntime/100;
+		averageTotWaittime=averageTotWaittime/100;
 	}
 }
