@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.Collections;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -15,7 +16,8 @@ public class Main {
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 			Processlist procList = (Processlist) jaxbUnmarshaller.unmarshal(file);
 			System.out.println(procList);
-			System.out.println(procList.getProcessenLijst().get(6).getArrivaltime());
+			procList.sort();
+			System.out.println(procList.getProcessenLijst().get(0).getArrivaltime());
 
 		} catch (JAXBException e) {
 			e.printStackTrace();

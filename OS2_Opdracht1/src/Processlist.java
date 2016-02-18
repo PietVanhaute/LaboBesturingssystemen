@@ -22,4 +22,8 @@ public class Processlist {
 	public int getSize() {
 		return processenLijst.size();
 	}
+
+	public void sort() {
+		Collections.sort(processenLijst,(Process p1, Process p2) -> p1.getArrivaltime()-p2.getArrivaltime());
+	}
 }

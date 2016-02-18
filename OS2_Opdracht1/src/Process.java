@@ -2,18 +2,19 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType( propOrder = { "pid", "arrivaltime", "servicetime" })
+@XmlType( propOrder = { "pid", "arrivaltime", "servicetime","endtime","runtime","norRuntime","waittime" })
 @XmlRootElement( name = "process")
 public class Process {
-	private int pid,arrivaltime,servicetime,endtime,runtime,norRuntime,waittime;
+	private int pid,arrivaltime,servicetime;
+	private int endtime,runtime,norRuntime,waittime;
 	
 	public int getEndtime() {
 		return endtime;
 	}
 
-//	public void setEndtime(int endtime) {
-//		this.endtime = endtime;
-//	}
+	public void setEndtime(int endtime) {
+		this.endtime = endtime;
+	}
 
 	public int getRuntime() {
 		runtime = servicetime + waittime;
@@ -29,9 +30,9 @@ public class Process {
 		return norRuntime;
 	}
 
-	public void setNorRuntime(int norRuntime) {
-		this.norRuntime = norRuntime;
-	}
+//	public void setNorRuntime(int norRuntime) {
+//		this.norRuntime = norRuntime;
+//	}
 
 	public int getWaittime() {
 		return waittime;
