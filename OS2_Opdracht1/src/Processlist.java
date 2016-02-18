@@ -38,6 +38,7 @@ public class Processlist {
 			}
 			hulp.setWaittime(tijd-hulp.getArrivaltime());
 			hulp.setEndtime(tijd+hulp.getServicetime());
+			tijd+=hulp.getServicetime();
 		}
 	}
 }

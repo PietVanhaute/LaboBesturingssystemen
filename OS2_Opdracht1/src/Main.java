@@ -17,9 +17,9 @@ public class Main {
 			Processlist procList = (Processlist) jaxbUnmarshaller.unmarshal(file);
 			System.out.println(procList);
 			procList.sortArrivalTime();
-			System.out.println(procList.getProcessenLijst().get(0).getArrivaltime());
 			procList.voerFCFSUit();
 			System.out.println("FCFS is uitgevoerd");
+			System.out.println(procList.getProcessenLijst().get(2).getWaittime());
 
 		} catch (JAXBException e) {
 			e.printStackTrace();
