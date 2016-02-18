@@ -10,6 +10,46 @@ public class GlobalVar {
 		initvar();
 	}
 
+	public List<Process> getProcessenPercentiel() {
+		return processenPercentiel;
+	}
+
+	public void setProcessenPercentiel(List<Process> processenPercentiel) {
+		this.processenPercentiel = processenPercentiel;
+	}
+
+	public int getAverageRuntime() {
+		return averageRuntime;
+	}
+
+	public void setAverageRuntime(int averageRuntime) {
+		this.averageRuntime = averageRuntime;
+	}
+
+	public int getAverageNorRuntime() {
+		return averageNorRuntime;
+	}
+
+	public void setAverageNorRuntime(int averageNorRuntime) {
+		this.averageNorRuntime = averageNorRuntime;
+	}
+
+	public int getAverageWaittime() {
+		return averageWaittime;
+	}
+
+	public void setAverageWaittime(int averageWaittime) {
+		this.averageWaittime = averageWaittime;
+	}
+
+	public int getPercentielNummer() {
+		return percentielNummer;
+	}
+
+	public void setPercentielNummer(int percentielNummer) {
+		this.percentielNummer = percentielNummer;
+	}
+
 	private void initvar() {
 		//Kunnen ervan uitgaan dat de lijst volgens servicetime zijn gesorteerd
 		averageNorRuntime=0;

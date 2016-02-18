@@ -10,6 +10,38 @@ public class GlobalVarList {
 		averageNorRuntime=0; 
 		averageWaittime=0;
 	}
+	
+	public List<GlobalVar> getAllePercentielen() {
+		return allePercentielen;
+	}
+
+	public void setAllePercentielen(List<GlobalVar> allePercentielen) {
+		this.allePercentielen = allePercentielen;
+	}
+
+	public int getAverageRuntime() {
+		return averageRuntime;
+	}
+
+	public void setAverageRuntime(int averageRuntime) {
+		this.averageRuntime = averageRuntime;
+	}
+
+	public int getAverageNorRuntime() {
+		return averageNorRuntime;
+	}
+
+	public void setAverageNorRuntime(int averageNorRuntime) {
+		this.averageNorRuntime = averageNorRuntime;
+	}
+
+	public int getAverageWaittime() {
+		return averageWaittime;
+	}
+
+	public void setAverageWaittime(int averageWaittime) {
+		this.averageWaittime = averageWaittime;
+	}
 
 	public void verwerkGegevens(Processlist procList) {
 		//Krijgt lijst met alle processen binnen gesorteerd volgens servicetime
@@ -22,5 +54,6 @@ public class GlobalVarList {
 			hulp  = new GlobalVar(procList.verdeelLijst(i,aantalElementenPerPercentiel),i);
 			allePercentielen.add(hulp);
 		}
+		
 	}
 }
