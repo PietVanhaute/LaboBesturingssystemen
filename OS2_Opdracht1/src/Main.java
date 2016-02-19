@@ -28,7 +28,7 @@ public class Main {
 	}
 
 	private static void maakGrafiek(List<GlobalVarList> gegevensAlleAlgoritmen) {
-		LineChart_AWT chart = new LineChart_AWT("School Vs Years" ,"Numer of Schools vs years");
+		LineChart_AWT chart = new LineChart_AWT("School Vs Years" ,"Numer of Schools vs years",gegevensAlleAlgoritmen);
 		chart.pack( );
 		RefineryUtilities.centerFrameOnScreen( chart );
 		chart.setVisible( true );
@@ -53,6 +53,7 @@ public class Main {
 			System.out.println("Gegevens zijn verwerkt");
 			gegevensAlleAlgo.add(hulp);
 			System.out.println("Gegevens zijn toegevoegd aan de lijst");
+			//System.out.println(gegevensAlleAlgo.get(0).getSize());
 		}
 		return gegevensAlleAlgo;
 	}

@@ -64,4 +64,12 @@ public class GlobalVarList {
 		averageTotRuntime=averageTotRuntime/100;
 		averageTotWaittime=averageTotWaittime/100;
 	}
+
+	public int getSize() {
+		return allePercentielen.size();
+	}
+
+	public GlobalVar getPercentiel(int j) {
+		return allePercentielen.get(j);
+	}
 }
