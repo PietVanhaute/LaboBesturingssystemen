@@ -30,19 +30,19 @@ public class Main {
 		GlobalVarList hulp;
 		List<GlobalVarList> gegevensAlleAlgo = new ArrayList<GlobalVarList>();
 		for(int i=0;i<9;i++){
+			hulp = new GlobalVarList();
 			switch(i){
 			case 0: 
-				hulp = new GlobalVarList();
 				procList.voerFCFSUit();
 				System.out.println("FCFS is uitgevoerd");
-				procList.sortServiceTime();
-				hulp.verwerkGegevens(procList);
-				System.out.println("Gegevens zijn verwerkt");
-				gegevensAlleAlgo.add(hulp);
-				System.out.println("Gegevens zijn toegevoegd aan de lijst");
 				break;
 			//case 1 : procList.voerRR2Uit(); ...
 			}
+			procList.sortServiceTime();
+			hulp.verwerkGegevens(procList);
+			System.out.println("Gegevens zijn verwerkt");
+			gegevensAlleAlgo.add(hulp);
+			System.out.println("Gegevens zijn toegevoegd aan de lijst");
 		}
 		return gegevensAlleAlgo;
 	}
