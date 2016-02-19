@@ -49,7 +49,7 @@ public class GlobalVarList {
 		//Daarna kunnen alle gegevens berekent worden voor de grafieken
 		int aantalElementenPerPercentiel = (procList.getSize()+1)/100;
 		GlobalVar hulp;
-		for (int i = 1; i <= 100 ;i++){
+		for (int i = 0; i < 100 ;i++){
 			//Nieuw percentiel wordt aangemaakt
 			hulp  = new GlobalVar(procList.verdeelLijst(i,aantalElementenPerPercentiel),i);
 			allePercentielen.add(hulp);
