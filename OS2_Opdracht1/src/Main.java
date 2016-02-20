@@ -28,7 +28,7 @@ public class Main {
 	}
 
 	private static void maakGrafiek(List<GlobalVarList> gegevensAlleAlgoritmen) {
-		LineChart_AWT chart = new LineChart_AWT("School Vs Years" ,"Numer of Schools vs years",gegevensAlleAlgoritmen);
+		LineChart_AWT chart = new LineChart_AWT("Scheduling Algortimes" ,"Scheduling Algoritmes",gegevensAlleAlgoritmen);
 		chart.pack( );
 		RefineryUtilities.centerFrameOnScreen( chart );
 		chart.setVisible( true );
@@ -39,7 +39,7 @@ public class Main {
 		//Lijst waarin alle algoritmes kunnen komen
 		GlobalVarList hulp;
 		List<GlobalVarList> gegevensAlleAlgo = new ArrayList<GlobalVarList>();
-		for(int i=0;i<9;i++){
+		for(int i=0;i<1;i++){
 			hulp = new GlobalVarList();
 			switch(i){
 			case 0: 
