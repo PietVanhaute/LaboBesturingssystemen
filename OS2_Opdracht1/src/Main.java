@@ -45,6 +45,7 @@ public class Main {
 			case 0: 
 				procList.voerFCFSUit();
 				System.out.println("FCFS is uitgevoerd");
+				hulp.setAlgoritmeNaam("FCFS");
 				break;
 			//case 1 : procList.voerRR2Uit(); ...
 			}

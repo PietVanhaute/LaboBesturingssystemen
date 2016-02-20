@@ -30,7 +30,7 @@ public class LineChart_AWT extends ApplicationFrame {
 			GlobalVarList data = gegevensAlleAlgoritmen.get(i);
 			for(int j = 0;j<data.getSize();j++){
 				GlobalVar percentiel = data.getPercentiel(j);
-				dataset.addValue(percentiel.getAverageNorRuntime(),"FCFS",new String(percentiel.getAverageServiceTime()+""));
+				dataset.addValue(percentiel.getAverageNorRuntime(),data.getAlgoritmeNaam(),new String(percentiel.getAverageServiceTime()+""));
 			}
 		}
 		return dataset;

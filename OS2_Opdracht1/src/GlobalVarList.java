@@ -3,12 +3,21 @@ import java.util.*;
 public class GlobalVarList {
 	private List<GlobalVar> allePercentielen;
 	private int averageTotRuntime, averageTotNorRuntime, averageTotWaittime;
-	
+	private String algoritmeNaam;
+
 	public GlobalVarList(){
 		allePercentielen = new ArrayList<GlobalVar>();
 		averageTotRuntime=0;
 		averageTotNorRuntime=0; 
 		averageTotWaittime=0;
+	}
+	
+	public String getAlgoritmeNaam() {
+		return algoritmeNaam;
+	}
+
+	public void setAlgoritmeNaam(String algoritmeNaam) {
+		this.algoritmeNaam = algoritmeNaam;
 	}
 	
 	public List<GlobalVar> getAllePercentielen() {
