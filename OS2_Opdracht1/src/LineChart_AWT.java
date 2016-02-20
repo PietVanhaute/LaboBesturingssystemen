@@ -7,11 +7,9 @@ import java.util.List;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
@@ -27,7 +25,9 @@ public class LineChart_AWT extends ApplicationFrame {
 		
 		final XYPlot plot = lineChart.getXYPlot( );
 		XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer( );
-	    renderer.setSeriesPaint( 0 , Color.RED );
+	    //Kleuren aanpassen voor alle grafieken 
+		//Momenteel is er maar 1 aanwezig dus de rest maakt niet echt uit
+		renderer.setSeriesPaint( 0 , Color.RED );
 	    renderer.setSeriesPaint( 1 , Color.GREEN );
 	    renderer.setSeriesPaint( 2 , Color.YELLOW );
 	    renderer.setSeriesStroke( 0 , new BasicStroke( 4.0f ) );
