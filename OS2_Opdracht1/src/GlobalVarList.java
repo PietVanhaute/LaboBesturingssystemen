@@ -81,4 +81,9 @@ public class GlobalVarList {
 	public GlobalVar getPercentiel(int j) {
 		return allePercentielen.get(j);
 	}
+
+	public void clear() {
+		allePercentielen.clear();
+		
+	}
 }

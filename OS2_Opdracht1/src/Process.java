@@ -33,6 +33,11 @@ public class Process {
 //		this.norRuntime = norRuntime;
 //	}
 
+	@Override
+	public String toString() {
+		return "Process " + pid + ",";
+	}
+
 	public int getWaittime() {
 		return waittime;
 	}

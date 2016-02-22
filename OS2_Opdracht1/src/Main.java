@@ -41,6 +41,8 @@ public class Main {
 		List<GlobalVarList> gegevensAlleAlgo = new ArrayList<GlobalVarList>();
 		for(int i=0;i<2;i++){
 			hulp = new GlobalVarList();
+			//hulp.clear();
+			procList.sortArrivalTime();
 			switch(i){
 			case 0: 
 				procList.voerFCFSUit();

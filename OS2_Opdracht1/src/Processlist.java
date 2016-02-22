@@ -64,7 +64,7 @@ public class Processlist {
 			if (tijd > hulp.getArrivaltime()) {
 				wachtLijst.add(hulp);
 			}
-			if(wachtLijst.size()!=0){
+			if(wachtLijst.size()!=0 && hulp.getArrivaltime()>tijd){
 				//Alle wachttijden berekenen voor de wachtende processen
 				for(Process p : wachtLijst){
 					p.setWaittime(tijd-p.getArrivaltime());
@@ -76,6 +76,10 @@ public class Processlist {
 				wachtLijst.remove(0);
 				uitvoeren.setEndtime(tijd + uitvoeren.getServicetime());
 				tijd += uitvoeren.getServicetime();
+			}else{
+				hulp.setWaittime(tijd - hulp.getArrivaltime());
+				hulp.setEndtime(tijd + hulp.getServicetime());
+				tijd += hulp.getServicetime();
 			}
 		}
 
