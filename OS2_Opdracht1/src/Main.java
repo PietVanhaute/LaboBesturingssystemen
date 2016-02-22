@@ -39,7 +39,7 @@ public class Main {
 		//Lijst waarin alle algoritmes kunnen komen
 		GlobalVarList hulp;
 		List<GlobalVarList> gegevensAlleAlgo = new ArrayList<GlobalVarList>();
-		for(int i=0;i<1;i++){
+		for(int i=0;i<2;i++){
 			hulp = new GlobalVarList();
 			switch(i){
 			case 0: 
@@ -47,7 +47,11 @@ public class Main {
 				System.out.println("FCFS is uitgevoerd");
 				hulp.setAlgoritmeNaam("FCFS");
 				break;
-			//case 1 : procList.voerRR2Uit(); ...
+			case 1 : 
+				procList.voerHRRNUit();
+				System.out.println("HRRN is uitgevoerd");
+				hulp.setAlgoritmeNaam("HRRN");
+				break;
 			}
 			procList.sortServiceTime();
 			hulp.verwerkGegevens(procList);
