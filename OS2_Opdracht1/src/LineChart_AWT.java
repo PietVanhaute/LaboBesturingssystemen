@@ -46,7 +46,7 @@ public class LineChart_AWT extends ApplicationFrame {
 		for(int i=0;i<gegevensAlleAlgoritmen.size();i++){
 			//één dataset van alle algoritmes is geselecteerd
 			GlobalVarList data = gegevensAlleAlgoritmen.get(i);
-			XYSeries hulp = new XYSeries( data.getAlgoritmeNaam() ); 
+			XYSeries hulp = new XYSeries( data.getAlgoritmeNaam() );
 			for(int j = 0;j<data.getSize();j++){
 				GlobalVar percentiel = data.getPercentiel(j);
 				hulp.add(percentiel.getAverageNorRuntime(),percentiel.getAverageServiceTime());

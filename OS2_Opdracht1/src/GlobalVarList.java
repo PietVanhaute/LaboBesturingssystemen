@@ -77,6 +77,11 @@ public class GlobalVarList {
 	public int getSize() {
 		return allePercentielen.size();
 	}
+	
+	public GlobalVar getElement(){
+		Collections.sort(allePercentielen,(GlobalVar p1, GlobalVar p2) -> p1.getAverageServiceTime() - p2.getAverageServiceTime());
+		return allePercentielen.get(allePercentielen.size()-1);
+	}
 
 	public GlobalVar getPercentiel(int j) {
 		return allePercentielen.get(j);

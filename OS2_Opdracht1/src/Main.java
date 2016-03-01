@@ -60,7 +60,8 @@ public class Main {
 			System.out.println("Gegevens zijn verwerkt");
 			gegevensAlleAlgo.add(hulp);
 			System.out.println("Gegevens zijn toegevoegd aan de lijst");
-			//System.out.println(gegevensAlleAlgo.get(0).getSize());
+			if(i == 1)
+			System.out.println(gegevensAlleAlgo.get(1).getElement().getAverageServiceTime());
 		}
 		return gegevensAlleAlgo;
 	}
