@@ -49,7 +49,8 @@ public class LineChart_AWT extends ApplicationFrame {
 			XYSeries hulp = new XYSeries( data.getAlgoritmeNaam() );
 			for(int j = 0;j<data.getSize();j++){
 				GlobalVar percentiel = data.getPercentiel(j);
-				hulp.add(percentiel.getAverageNorRuntime(),percentiel.getAverageServiceTime());
+				System.out.println(percentiel.getAverageServiceTime()+" "+percentiel.getAverageNorRuntime());
+				hulp.add(percentiel.getAverageServiceTime(),percentiel.getAverageNorRuntime());
 			}
 			dataset.addSeries(hulp);
 		}
