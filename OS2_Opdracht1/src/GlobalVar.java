@@ -2,7 +2,7 @@ import java.util.*;
 
 public class GlobalVar {
 	private List<Process> processenPercentiel;
-	private int averageRuntime, averageNorRuntime, averageWaittime,percentielNummer,averageServiceTime;
+	private double averageRuntime, averageNorRuntime, averageWaittime,percentielNummer,averageServiceTime;
 	
 	public GlobalVar(List<Process> lijst,int nummer){
 		processenPercentiel = lijst;
@@ -18,35 +18,35 @@ public class GlobalVar {
 		this.processenPercentiel = processenPercentiel;
 	}
 
-	public int getAverageRuntime() {
+	public double getAverageRuntime() {
 		return averageRuntime;
 	}
 
-	public void setAverageRuntime(int averageRuntime) {
+	public void setAverageRuntime(double averageRuntime) {
 		this.averageRuntime = averageRuntime;
 	}
 
-	public int getAverageNorRuntime() {
+	public double getAverageNorRuntime() {
 		return averageNorRuntime;
 	}
 
-	public void setAverageNorRuntime(int averageNorRuntime) {
+	public void setAverageNorRuntime(double averageNorRuntime) {
 		this.averageNorRuntime = averageNorRuntime;
 	}
 
-	public int getAverageWaittime() {
+	public double getAverageWaittime() {
 		return averageWaittime;
 	}
 
-	public void setAverageWaittime(int averageWaittime) {
+	public void setAverageWaittime(double averageWaittime) {
 		this.averageWaittime = averageWaittime;
 	}
 
-	public int getPercentielNummer() {
+	public double getPercentielNummer() {
 		return percentielNummer;
 	}
 
-	public void setPercentielNummer(int percentielNummer) {
+	public void setPercentielNummer(double percentielNummer) {
 		this.percentielNummer = percentielNummer;
 	}
 
@@ -69,11 +69,11 @@ public class GlobalVar {
 		averageServiceTime=averageServiceTime/processenPercentiel.size();
 	}
 
-	public int getAverageServiceTime() {
+	public double getAverageServiceTime() {
 		return averageServiceTime;
 	}
 
-	public void setAverageServiceTime(int averageServiceTime) {
+	public void setAverageServiceTime(double averageServiceTime) {
 		this.averageServiceTime = averageServiceTime;
 	}
 }

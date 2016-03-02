@@ -2,7 +2,7 @@ import java.util.*;
 
 public class GlobalVarList {
 	private List<GlobalVar> allePercentielen;
-	private int averageTotRuntime, averageTotNorRuntime, averageTotWaittime;
+	private double averageTotRuntime, averageTotNorRuntime, averageTotWaittime;
 	private String algoritmeNaam;
 
 	public GlobalVarList(){
@@ -28,27 +28,27 @@ public class GlobalVarList {
 		this.allePercentielen = allePercentielen;
 	}
 
-	public int getAverageTotRuntime() {
+	public double getAverageTotRuntime() {
 		return averageTotRuntime;
 	}
 
-	public void setAverageTotRuntime(int averageRuntime) {
+	public void setAverageTotRuntime(double averageRuntime) {
 		this.averageTotRuntime = averageRuntime;
 	}
 
-	public int getAverageTotNorRuntime() {
+	public double getAverageTotNorRuntime() {
 		return averageTotNorRuntime;
 	}
 
-	public void setAverageTotNorRuntime(int averageNorRuntime) {
+	public void setAverageTotNorRuntime(double averageNorRuntime) {
 		this.averageTotNorRuntime = averageNorRuntime;
 	}
 
-	public int getAverageTotWaittime() {
+	public double getAverageTotWaittime() {
 		return averageTotWaittime;
 	}
 
-	public void setAverageTotWaittime(int averageWaittime) {
+	public void setAverageTotWaittime(double averageWaittime) {
 		this.averageTotWaittime = averageWaittime;
 	}
 
@@ -79,7 +79,7 @@ public class GlobalVarList {
 	}
 	
 	public GlobalVar getElement(){
-		Collections.sort(allePercentielen,(GlobalVar p1, GlobalVar p2) -> p1.getAverageServiceTime() - p2.getAverageServiceTime());
+		Collections.sort(allePercentielen,(GlobalVar p1, GlobalVar p2) -> Double.compare(p1.getAverageServiceTime(),p2.getAverageServiceTime()));
 		return allePercentielen.get(allePercentielen.size()-1);
 	}
 

@@ -24,11 +24,11 @@ public class Processlist {
 	}
 
 	public void sortArrivalTime() {
-		Collections.sort(processenLijst, (Process p1, Process p2) -> p1.getArrivaltime() - p2.getArrivaltime());
+		Collections.sort(processenLijst, (Process p1, Process p2) ->Double.compare( p1.getArrivaltime(),p2.getArrivaltime()));
 	}
 
 	public void sortServiceTime() {
-		Collections.sort(processenLijst, (Process p1, Process p2) -> p1.getServicetime() - p2.getServicetime());
+		Collections.sort(processenLijst, (Process p1, Process p2) -> Double.compare(p1.getServicetime(), p2.getServicetime()));
 	}
 
 	public List<Process> verdeelLijst(int i, int aantalElementenPerPercentiel) {
@@ -40,7 +40,7 @@ public class Processlist {
 	// Uitvoering van het FCFS algo
 	public void voerFCFSUit() {
 		// We beginnen bij het eerste proces
-		int tijd = 0;
+		double tijd = 0;
 		for (int i = 0; i < processenLijst.size(); i++) {
 			Process hulp = processenLijst.get(i);
 			if (tijd < hulp.getArrivaltime()) {
@@ -54,7 +54,7 @@ public class Processlist {
 
 	public void voerHRRNUit() {
 		List<Process> wachtLijst = new ArrayList<Process>();
-		int tijd = 0;
+		double tijd = 0;
 		//boolean bezet = false;
 		for (int i = 0; i < processenLijst.size(); i++) {
 			Process hulp = processenLijst.get(i);
@@ -70,7 +70,7 @@ public class Processlist {
 					p.setWaittime(tijd-p.getArrivaltime());
 				}
 				//Sorteer volgens norRuntime
-				Collections.sort(wachtLijst,(Process p1, Process p2) -> p1.getNorRuntime() - p2.getNorRuntime());
+				Collections.sort(wachtLijst,(Process p1, Process p2) -> Double.compare(p1.getNorRuntime(),p2.getNorRuntime()));
 				//Neem de eerste uit de wachtlijst en haal die er ook uit
 				Process uitvoeren = wachtLijst.get(0);
 				wachtLijst.remove(0);
